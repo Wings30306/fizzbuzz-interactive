@@ -1,4 +1,5 @@
 """Interactive FizzBuzz game"""
+import pyfiglet
 
 
 def fizzbuzz(num):
@@ -22,9 +23,6 @@ def fizzbuzz(num):
 
 def play():
     """Main function to play the game"""
-    print("Hello, welcome to FizzBuzz, "
-          "the division game that tells you whether a number is divisible by 3"
-          " (Fizz), 5 (Buzz) or both (FizzBuzz).")
     play_status = True
     while play_status:
         try:
@@ -45,4 +43,15 @@ def play():
             print("Not a number, try again!")
 
 
-play()
+def welcome():
+    """
+    Welcome the user and explain what FizzBuzz is
+    """
+    print(pyfiglet.figlet_format("FizzBuzz", justify="center"))
+    print("Hello, welcome to FizzBuzz, "
+          "the division game that tells you whether a number is divisible by 3"
+          " (Fizz), 5 (Buzz) or both (FizzBuzz).")
+    play()
+
+
+welcome()
